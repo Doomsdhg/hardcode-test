@@ -1,14 +1,14 @@
-.app {
+.slider {
   &__container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     width: 100%;
+    height: 100%;
   }
 
-  &__slider {
-    height: 450px;
-    width: 800px;
+  &__current-slide-image {
+    width: 100%;
+    height: 100%;
   }
 }
