@@ -1,10 +1,13 @@
 <div class="slider slider__container">
-  <div *ngIf="slides.length > 0 && (current_slide$ | async) as current_slide else no_slides">
-    <a [href]="current_slide.url">
-      <img class="slider__current-slide-image"
-           [src]="current_slide.image">
-    </a>
-  </div>
+  <ul *ngIf="slides.length > 0 && (current_slide$ | async) as current_slide else no_slides">
+    <li *ngFor="let slide of input_slides">
+      <a *ngIf="slide.id === current_slide.id"
+         [href]="current_slide.url">
+        <img class="slider__current-slide-image"
+             [src]="current_slide.image">
+      </a>
+    </li>
+  </ul>
 </div>
 
 <ng-template #no_slides>

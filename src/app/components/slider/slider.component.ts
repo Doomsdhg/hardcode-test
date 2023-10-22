@@ -24,6 +24,7 @@ export class SliderComponent implements OnInit {
       }
     });
 
+    this._input_slides = input_slides;
     this._slides = sorted_slides;
   };
 
@@ -31,9 +32,14 @@ export class SliderComponent implements OnInit {
     return this._slides;
   }
 
+  public get input_slides() {
+    return this._input_slides;
+  }
+
   @Input() public slide_display_time: number = 5000;
 
   private _slides: ISlide[] = [];
+  private _input_slides: ISlide[] = [];
 
   private destroy_ref = inject(DestroyRef);
 
